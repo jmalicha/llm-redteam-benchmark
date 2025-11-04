@@ -1,0 +1,23 @@
+name: redteam
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.11
+  - pip
+  # Core GPU stack (leave CUDA runtime to cluster module OR use pytorch-cuda below)
+  - pytorch
+  - pytorch-cuda=12.1
+  # Science/data
+  - pandas=2.2.*
+  - numpy=1.26.*
+  - scikit-learn=1.4.*
+  - statsmodels=0.14.*
+  - matplotlib=3.8.*
+  - pyyaml=6.*
+  - regex
+  - tqdm
+  # Install project python deps via pip to stay aligned with our pinned list
+  - pip:
+      - -r requirements.txt
